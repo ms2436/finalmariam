@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/edit.css">
+    <title>Winter Driving Quiz</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand">Winter Warriors</a>
+  </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="driving.html">Learning</a></li>
+        <li class="active"><a href="quiz.html">Quiz</a></li>
+        <li><a href="resources.html">Resources</a></li>
+      </ul>
+    </div>
+ </div>
+</nav>
+
+<style type="text/css">
+<!--
+.bgclr {background-color: white; color: black; font-weight: bold;}
+-->
+</style>
+
+<script language="JavaScript">
+
+var numQues = 4;
+
+var numChoi = 3;
+
+var answers = new Array(4);
+
+
+answers[0] = "Food and Water";
+answers[1] = "Stay calm and stay in your car";
+answers[2] = "Battery, tires, windshield fluid, fuel";
+answers[3] = "Prepare one or buy one";
+
+
+function getScore(form) {
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+          break;
+        }
+      }
+    }
+  }
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  form.solutions.value = correctAnswers;
+}
+
+</script>
+
+
+<h3>Winter Weather Driving Quiz</h3>
+
+<form name="quiz">
+1. Which supplies should you be sure to include in a car survival kit?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Step Ladder">Step Ladder</li>
+  <li><input type="radio" name="q1" value="Food and Water">Food and Water</li>
+  <li><input type="radio" name="q1" value="Extra Radio">Extra Radio</li>
+</ul>
+
+2. What should you do if your car is stuck in a snowstorm?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="Leave your car running for heat until help arrives">Leave your car running for heat until help arrives</li>
+  <li><input type="radio" name="q2" value="Get out and look for help">Get out and look for help</li>
+  <li><input type="radio" name="q2" value="Stay calm and stay in your car">Stay calm and stay in your car</li>
+</ul>
+3. What items should you check before the winter season begins?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="Battery, tires, windshield fluid, fuel">Battery, tires, windshield fluid, fuel</li>
+  <li><input type="radio" name="q3" value="Cell phone service">Cell phone service</li>
+  <li><input type="radio" name="q3" value="Car paint and seat protection">Car paint and seat protection</li>
+</ul>
+4. What is the best way to make sure you have the best car survival kit?
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="Borrow one from a friend">Borrow one from a friend</li>
+  <li><input type="radio" name="q4" value="Prepare one or buy one">Prepare one or buy one</li>
+  <li><input type="radio" name="q4" value="Use the items already in your car">Use the items already in your car</li>
+</ul>
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Score = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+Correct answers:<br>
+<textarea class="bgclr" name="solutions" wrap="virtual" rows="4" cols="30" disabled>
+</textarea>
+</form>
+</body>
+</html>
