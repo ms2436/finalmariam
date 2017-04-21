@@ -1,3 +1,38 @@
+/*
+ ww-styles.css
+ Holds the styles that overwrite default (bootstrap) styles.
+
+*/
+
+/*  TOC
+ TYPOGRAHY
+ BASE LAYOUT
+
+*/
+
+/* TYPOGRAHY */
+body {  color: 333;}
+
+
+/* BASE LAYOUT */
+.opening {
+  font-weight: bold;
+}
+.questions{
+  margin: 1em 0;
+  list-style: none;
+}
+
+/* HOME PAGE*/
+ .ww-home {
+   background: url('img/snowstormbg.jpg');
+   text-align: center;
+ }
+
+.ww-home main {  font-size: 175%; }
+
+.ww-home .btn{  margin-top: 1.5em;}
+
 .navbar-brand{
   background-image: image(img/winterwarriors.jpg);
 }
