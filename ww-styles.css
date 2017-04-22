@@ -11,27 +11,89 @@
 */
 
 /* TYPOGRAHY */
-body {  color: 333;}
+body {
+  color: 333;
+  background-color: #748BA7;
+}
 
+hr {
+  padding: 1em 5em;
+  color: blue;
+  background: blue;
+  font-size: 0;
+  border: 0;
+  height: 2px;
+}
 
 /* BASE LAYOUT */
+
+body {
+  margin: 5%;
+}
+.wrap {
+  background-color: #F8F8F8;
+}
+ul {  list-style: none}
+
 .opening {
   font-weight: bold;
 }
+
 .questions{
   margin: 1em 0;
-  list-style: none;
 }
 
+.page-header .sub-head{
+  font-size: .75em;
+  color: #051C38;
+}
 /* HOME PAGE*/
  .ww-home {
    background: url('img/snowstormbg.jpg');
    text-align: center;
  }
 
-.ww-home main {  font-size: 175%; }
+.ww-home main {    text-align: center ; font-size: 175%; }
 
-.ww-home .btn{  margin-top: 1.5em;}
+.ww-home .btn {  margin-top: 1.5em;}
+
+.quiz {
+
+
+}
+
+.quiz form {
+  margin: 0 auto;
+}
+
+.quiz-question {
+  color: blue;
+}
+
+.ww-learning .frame {
+  border: 1px solid #ccc;
+  padding: 1.5em;
+  margin-bottom: 1em;
+}
+
+.ww-item {
+  display: flex;
+}
+
+.ww-item iframe {
+  width: 50%;
+  margin-right: 2em;
+}
+
+.ww-item p {
+  font-size: 150%;
+}
+
+.ww-learning li {
+  font-size: 150%;
+}
+/*Other stuff*/
+
 
 .navbar-brand{
   background-image: image(img/winterwarriors.jpg);
