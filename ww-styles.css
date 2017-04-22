@@ -56,7 +56,10 @@ ul {  list-style: none}
 .ww-home main {    text-align: center ; font-size: 175%; }
 
 .ww-home .btn {  margin-top: 1.5em;}
-
+.ww-home .opening {
+  font-size: 1.5em;
+  text-align: center;
+}
 .quiz {
 
 
@@ -67,7 +70,7 @@ ul {  list-style: none}
 }
 
 .quiz-question {
-  color: blue;
+  color: #191C59;
 }
 
 .ww-learning .frame {
