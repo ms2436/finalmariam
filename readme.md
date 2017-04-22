@@ -45,7 +45,7 @@ The website will have a clear and unembellished look to it.  I have used winter 
 
 ## Skeleton
 Interface, navigation, information design
-![GitHub Logo](/img/1-LEARNING.png)
-![GitHub Logo](/img/2-RESOURCES.png)
-![GitHub Logo](/img/3-MAKE-A-KITpng)
-![GitHub Logo](/img/Homepage.png)
+![GitHub Logo](/img/learningframe.png)
+![GitHub Logo](/img/resourcesframes.png)
+![GitHub Logo](/img/makeakitframe.png)
+![GitHub Logo](/img/homepageframe.png)
