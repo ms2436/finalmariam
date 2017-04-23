@@ -1,111 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="ww-styles.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  <script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
-  <style media="screen">
-
-  .draggable {
-    width: 200px;
-    display: inline-block;
-  }
-
-  .draggable:hover {
-  cursor: move; /* fallback if grab cursor is unsupported */
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-.draggbale:active {
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-}
-.draggables {
-  text-align: center;
-}
-.droppable {
-  width: 400px;
-  margin: 10px auto;
-  z-index: -1;
-}
+  <style>
+    body { text-align: center; position: relative; }
+    .draggable { width: 200px; height: 200px; display: inline-block; background-color: silver; }
+    .draggable:hover { cursor: -webkit-grab; cursor: grab; }
+    .draggable:active { cursor: -webkit-grabbing; cursor: grabbing; z-index: 10; }
+    .droppable { width: 400px; height: 400px; margin: 10px auto; background-color: pink; }
+    img { box-sizing: border-box; border: 1px solid blue; }
   </style>
-    <title>Winter Driving Quiz</title>
-  </head>
-  <body class="ww-quiz">
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand"><a href="index.html"><img src="img/Winter_Warriors_Logo.jpg"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="learning.html">Learning</a></li>
-        <li class="active"><a href="quiz.html">Make A Kit</a></li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </div>
- </div>
-</nav>
-<h3>Make your own survival car kit. </h3>
-<p>
-  4 of the 5 items below belong in the kit.  Drag and drop the 4 items you need in your Car Survival Kit. Click to see if your kit is ready to go!
-</p>
-<div class="draggables">
-  <div class="draggable"><img src="img/carfirstaid.jpg"></div>
-  <div class="draggable"><img src="img/carflares.jpeg"></div>
-  <div class="draggable"><img src="img/carfood.jpeg"></div>
-  <div class="draggable"><img src="img/carumbrella.jpg"></div>
-  <div class="draggable"><img src="img/carshovel.jpg"></div>
-</div>
-<div class="droppable"><img src="img/carstorage.jpg"></div>
+</head>
+<body>
+  <div class="draggable"><img src="img/carfirstaid.jpg" ></div>
+  <div class="draggable"><img src="img/carflares.jpeg" ></div>
+  <div class="draggable"><img src="img/carfood.jpeg" ></div>
+  <div class="draggable"><img src="img/carumbrella.jpg" ></div>
+  <div class="draggable"><img src="img/carshovel.jpg" ></div>
 
-<script>
+  <div class="droppable"><img src="img/carstorage.jpg" /></div>
 
-var dragged=null;
-var items=0;
+  <script>
+    $(document).ready(function(){
 
+      var left = $(".droppable img").position().left,
+          top  = $(".droppable img").position().top,
+          items = 0;
 
-$(document).ready(function(){
-    $(".draggable").draggable({
-        drag: function( event, ui ) {
-          dragged=$(this);
+      $(".draggable").draggable();
+      $(".droppable").droppable({
+        drop: function(event, ui){
+          var dragged = ui.draggable[0];
+          items++;
+          switch(items){
+            case 1:
+              $(dragged).css({
+                position: "absolute",
+                top: top,
+                left: left
+              });
+              break;
+            case 2:
+              $(dragged).css({
+                position: "absolute",
+                top: top,
+                left: left + 100
+              });
+              break;
+            case 3:
+              $(dragged).css({
+                position: "absolute",
+                top: top + 100,
+                left: left
+              });
+              break;
+            case 4:
+              $(dragged).css({
+                position: "absolute",
+                top: top + 100,
+                left: left + 100
+              });
+          }
         }
+      });
+
     });
-    $( ".droppable" ).droppable({
-     drop: function( event, ui ) {console.log(dragged);
-       var top = $(this).position().top;
-       var left = $(this).position().left;
-       items++;console.log(top, left, items);
-       switch (items){
-          case 1:
-            $(dragged).css({"top": top+"px", "left": left+"px"});
-            break;
-          case 2:
-            $(dragged).css({"top": top, "left": left+200});
-            break;
-          case 3:
-            $(dragged).css({"top": top+200, "left": left});
-            break;
-          case 4:
-            $(dragged).css({"top": top+200, "left": left+200});
-            //test if correct four chosen...
-       }
-       dragged = null;
-     }
-   });
-});
-
-</script>
-
-
+  </script>
 
 </body>
 </html>
