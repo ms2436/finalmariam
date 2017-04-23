@@ -12,37 +12,38 @@
   crossorigin="anonymous"></script>
   <style>
     body { text-align: center; position: relative; }
-    .draggable { width: 200px; height: 200px; display: inline-block; background-color: silver; }
+    .draggable { width: 100px; height: 100px; display: inline-block; background-color: silver; }
     .draggable:hover { cursor: -webkit-grab; cursor: grab; }
     .draggable:active { cursor: -webkit-grabbing; cursor: grabbing; z-index: 10; }
-    .droppable { width: 400px; height: 400px; margin: 10px auto; background-color: pink; }
+    .droppable { width: 200px; height: 200px; margin: 10px auto; background-color: pink; }
     img { box-sizing: border-box; border: 1px solid blue; }
   </style>
 </head>
 
 <body class="ww-quiz">
-  <nav class="navbar navbar-default">
-<div class="container-fluid">
-  <div class="navbar-header">
-    <a class="navbar-brand"><a href="index.html"><img src="img/Winter_Warriors_Logo.jpg"></a>
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><a href="learning.html">Learning</a></li>
-      <li class="active"><<a href="quiz.html">Make A Kit</a></li>
-      <li><a href="resources.html">Resources</a></li>
-    </ul>
-</div>
-</div>
-</nav>
-<body>
-  <div class="draggable"><img src="http://placehold.it/100x100" ></div>
-  <div class="draggable"><img src="http://placehold.it/100x100" ></div>
-  <div class="draggable"><img src="http://placehold.it/100x100" ></div>
-  <div class="draggable"><img src="http://placehold.it/100x100" ></div>
-  <div class="draggable"><img src="http://placehold.it/100x100" ></div>
 
-  <div class="droppable"><img src="http://placehold.it/200x200" /></div>
+      <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand"><a href="index.html"><img src="img/Winter_Warriors_Logo.jpg"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        <li><a href="learning.html">Learning</a></li>
+          <li class="active"><a href="quiz.html">Make A Kit</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+          </div>
+        </div>
+      </nav>
+<body>
+  <div class="draggable"><img src="img/carshovel.jpg"></div>
+  <div class="draggable"><img src="img/carfood.jpeg" ></div>
+  <div class="draggable"><img src="img/carumbrella.jpg" ></div>
+  <div class="draggable"><img src="img/carfirstaid.jpg" ></div>
+  <div class="draggable"><img src="img/cargloves.jpg" ></div>
+
+  <div class="droppable"><img src="img/carstorage.jpg" /></div>
 
   <script>
     $(document).ready(function(){
