@@ -1,16 +1,17 @@
 /*
  ww-styles.css
  Holds the styles that overwrite default (bootstrap) styles.
-
+ version: 0.2.0
 */
 
 /*  TOC
- TYPOGRAHY
- BASE LAYOUT
-
+ - TYPOGRAHY
+ - BASE LAYOUT
+   *** NAV
+   *** PAGE SPECIFIC
 */
 
-/* TYPOGRAHY */
+/***** TYPOGRAHY *****/
 body {
   color: 333;
   background-color: #748BA7;
@@ -18,95 +19,127 @@ body {
 
 hr {
   padding: 1em 5em;
-  color: blue;
-  background: blue;
+  color: #8f9fb9;
+  background: #8f9fb9;
   font-size: 0;
   border: 0;
   height: 2px;
 }
 
-/* BASE LAYOUT */
+/***** BASE LAYOUT *****/
 
-body {
-  margin: 5%;
-}
-.wrap {
-  background-color: #F8F8F8;
-}
+body { margin: 5%; }
+
 ul {  list-style: none}
 
-.opening {
-  font-weight: bold;
-}
+.wrap { background-color: #F8F8F8; }
 
-.questions{
-  margin: 1em 0;
-}
+.opening { font-weight: bold; }
 
 .page-header .sub-head{
   font-size: .75em;
   color: #051C38;
 }
-/* HOME PAGE*/
- .ww-home {
-   background: url('img/snowstormbg.jpg');
-   text-align: center;
- }
 
-.ww-home main {    text-align: center ; font-size: 175%; }
-
-.ww-home .btn {  margin-top: 1.5em;}
-.ww-home .opening {
-  font-size: 1.5em;
-  text-align: center;
-}
-.quiz {
-
-
+/*** NAV ***/
+.navbar-brand {
+  padding: 0 ;
 }
 
-.quiz form {
-  margin: 0 auto;
+.navbar-brand img {
+  height: 50px ;
+}
+/*** end NAV ***/
+
+main {
+	padding: 1em 2em;
+	background: #f8f8f8;
+	background: rgba(248, 248, 248, .5); /* Make the container background semi-transparent. */
+	border-radius: 8px ;
 }
 
-.quiz-question {
-  color: #191C59;
+footer { margin-top: 2em;}
+/*** PAGE SPECIFIC ***/
+/* Video Containers */
+
+.video-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 1em;
 }
 
-.ww-learning .frame {
+.video-container li {
+  width: 100%;
+  font-size: 150%;
+}
+
+.frame {
   border: 1px solid #ccc;
   padding: 1.5em;
   margin-bottom: 1em;
 }
 
-.ww-item {
-  display: flex;
-}
+
+.ww-item { display: flex; }
 
 .ww-item iframe {
   width: 50%;
   margin-right: 2em;
 }
 
-.ww-item p {
+.ww-item p { font-size: 150%; }
+
+#Checklist {
+  margin: 1em 0;
+}
+
+#Checklist li{
   font-size: 150%;
 }
 
-.ww-learning li {
-  font-size: 150%;
-}
-/*Other stuff*/
 
-
-.navbar-brand{
-  background-image: image(img/winterwarriors.jpg);
+/* Home */
+ .ww-home {
+		background: url('img/snowstormbg.jpg') no-repeat center center fixed ;
+		background-size: cover ;
+		text-align: center;
 }
 
-.answers li {
-list-style: upper-alpha;
+.ww-home main {
+	text-align: center ; font-size: 175%;
 }
+
+.ww-home .intro-questions { margin: 1em 0; }
+
+.ww-home .btn { margin-top: 1.5em;}
+
+.ww-home .quiz {
+	width: 100% ;
+	max-width: 800px ;
+	margin: 0 auto ;
+	text-align: left ;
+}
+
+.ww-home .quiz h2 {
+	text-align: center ;
+	font-weight: bold ;
+}
+
+.ww-home .quiz ol { margin-bottom: 1em ; }
+
+.ww-home .quiz form { margin: 0 auto; }
+
+.ww-home .quiz input { margin-right: 0.5em ; }
+
+.ww-home .quiz-question { color: #4576e3; }
+
+.ww-home .quiz .feedback {margin: 1em auto;}
+
+.ww-home .answers li { list-style: upper-alpha; }
 
 label {
-margin-left: 0.5em;
-cursor: pointer;
+	margin-left: 0.5em;
+	cursor: pointer;
 }
+
+/* Learning */

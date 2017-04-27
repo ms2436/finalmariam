@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> <!-- typo here -->
+		<title>Driving List</title> <!-- move to second item  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" href="ww-styles.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-
-    <title>Driving Checklist</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
   </head>
-  <body>
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand"><a href="index.html"><img src="img/Winter_Warriors_Logo.jpg"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="learning.html">Learning</a></li>
-        <li><a href="quiz.html">Make A Kit</a></li>
-        <li><a href="resources.html">Resources</a></li>
-      </ul>
-    </div>
- </div>
-</nav>
 
+  <body class="ww-drivelist">
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/winterwarriors.jpg"></a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learning <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="learning.html#Video">Video</a></li>
+								<li><a href="learning.html#Checklist">Checklist</a></li>
+							</ul>
+						</li>
+
+						<li><a href="quiz.html">Make A Kit</a></li>
+
+            <li class="dropdown">
+  						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+  						<ul class="dropdown-menu">
+                <li><a href="resources.html#Video">Video</a></li>
+                <li><a href="blizzardchecklist.html">Checklist</a></li>
+              </ul>
+            </li>
+
+					</ul><!-- /.nav navbar-nav -->
+
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+    <div class="contentFrame container-fluid">
+
+      <div class="row">
+        <main>
+          <header>
 
 <h1>Winter Car Care Checklist</h1>
-
+</header>
 <p>
   <ul>
   <li>Battery and Charging System – Have the battery and charging system tested by a trained technician. A fully charged battery in good condition is required to start an engine in cold weather. AAA members can request a visit from a AAA Mobile Battery Service technician who will test their battery and replace it on-site, if necessary. AAA Approved Auto Repair facilities can also test and replace weak batteries.</li>
@@ -61,8 +95,9 @@
 </div>
 </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
+</div>
+
+</div>
+  </main>
 </body>
 </html>
