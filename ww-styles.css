@@ -142,4 +142,14 @@ label {
 	cursor: pointer;
 }
 
-/* Learning */
+#pretest-feedback  {
+	display: none ;
+	margin: 1em 0 ;
+	padding: 1em ;
+	border: 1px solid green ;
+	border-radius: 10px ;
+}
+
+
+
+
