@@ -58,6 +58,7 @@ main {
 	border-radius: 8px ;
 }
 
+
 footer { margin-top: 2em;}
 /*** PAGE SPECIFIC ***/
 /* Video Containers */
@@ -149,7 +150,3 @@ label {
 	border: 1px solid green ;
 	border-radius: 10px ;
 }
-
-
-
-
