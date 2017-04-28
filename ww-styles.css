@@ -150,3 +150,10 @@ label {
 	border: 1px solid green ;
 	border-radius: 10px ;
 }
+.ww-quiz .droppable, .ww-quiz .draggable {
+display: inline-block;
+}
+
+.ww-quiz .droppable {
+  float: left;
+}

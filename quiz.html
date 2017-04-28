@@ -5,9 +5,13 @@
 		<title>Making A Kit</title> <!-- move to second item  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="ww-styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <!-- <script src="js/bootstrap.min.js" charset="utf-8"></script> -->
   </head>
 
   <body class="ww-quiz">
@@ -56,55 +60,71 @@
 
   <div class="page-header">
     <h1>Make a Kit <span class="sub-head">choose 4 of the items below to put in your car survival kit. Drag them into the box and click the button to see if you have chosen correctly.</span></h1>
+    <h3 id="gameMessage"><span></span><button onclick="location.reload();">Try Again</button></h3>
+    <a class="btn btn-primary btn-lg" href="learning.html" role="button">Learning</a>
   </div>
+  <div class="droppable"><img src="img/carstorage.jpg" /></div>
+
   <div class="draggable"><img src="img/carshovel.gif"></div>
   <div class="draggable"><img src="img/carfood.gif" ></div>
   <div class="draggable"><img src="img/carumbrella.gif" ></div>
   <div class="draggable"><img src="img/carfirstaid.gif" ></div>
   <div class="draggable"><img src="img/cargloves.gif" ></div>
 
-  <div class="droppable"><img src="img/carstorage.jpg" /></div>
-
   <script>
     $(document).ready(function(){
 
       var left = $(".droppable img").position().left,
-          top  = $(".droppable img").position().top,
-          items = 0;
+          top = $(".droppable img").position().top,
+          right = $(".droppable img").position().left + $(".droppable img").width(),
+          bottom = $(".droppable img").position().top + $(".droppable img").height(),
+          items = [],
+          wrongItem = document.querySelector(".draggable img[src*='carumbrella']").src;
 
       $(".draggable").draggable();
       $(".droppable").droppable({
         drop: function(event, ui){
           var dragged = ui.draggable[0];
-          items++;
-          switch(items){
+          switch(items.length){
+            case 0:
+              $(dragged).css({
+                position: "absolute",
+                top: top,
+                left: left
+              });
+              items.push($(dragged).find("img")[0].src);
+              break;
             case 1:
               $(dragged).css({
                 position: "absolute",
                 top: top,
-                left: left
+                left: right - $(dragged).width()
               });
+              items.push($(dragged).find("img")[0].src);
               break;
             case 2:
               $(dragged).css({
                 position: "absolute",
-                top: top,
-                left: left + 100
+                top: bottom - $(dragged).height(),
+                left: left
               });
+              items.push($(dragged).find("img")[0].src);
               break;
             case 3:
               $(dragged).css({
                 position: "absolute",
-                top: top + 100,
-                left: left
+                top: bottom - $(dragged).height(),
+                left: right - $(dragged).width()
               });
-              break;
-            case 4:
-              $(dragged).css({
-                position: "absolute",
-                top: top + 100,
-                left: left + 100
-              });
+              items.push($(dragged).find("img")[0].src);
+              //code for last item enetered
+              if (items.indexOf(wrongItem) > -1){
+                  //fail
+                  $("#gameMessage span").text("Oh No! You will not survive the winter with this kit.  Try again or visit Learning to learn more about car kits.");
+              } else {
+                  //win
+                  $("#gameMessage span").text("You are a Winter Warrior!  You are on your way to making a car kit to survive the winter weather!   Visit Learning to learn more about car kits.");
+              }
           }
         }
       });
