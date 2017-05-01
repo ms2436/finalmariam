@@ -157,3 +157,22 @@ display: inline-block;
 .ww-quiz .droppable {
   float: left;
 }
+
+.ww-quiz main {
+  min-height: 800px;
+}
+
+.ww-quiz .ww-btn span {
+  font-size: 18px;
+  margin-right: 1em; 
+}
+
+.ww-quiz .ww-btn button {
+  padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
