@@ -1,17 +1,4 @@
-/*
- ww-styles.css
- Holds the styles that overwrite default (bootstrap) styles.
- version: 0.2.0
-*/
 
-/*  TOC
- - TYPOGRAHY
- - BASE LAYOUT
-   *** NAV
-   *** PAGE SPECIFIC
-*/
-
-/***** TYPOGRAHY *****/
 body {
   color: 333;
   background-color: #748BA7;
@@ -26,7 +13,6 @@ hr {
   height: 2px;
 }
 
-/***** BASE LAYOUT *****/
 
 body { margin: 5%; }
 
@@ -41,7 +27,6 @@ ul {  list-style: none}
   color: #051C38;
 }
 
-/*** NAV ***/
 .navbar-brand {
   padding: 0 ;
 }
@@ -49,19 +34,18 @@ ul {  list-style: none}
 .navbar-brand img {
   height: 50px ;
 }
-/*** end NAV ***/
+
 
 main {
 	padding: 1em 2em;
 	background: #f8f8f8;
-	background: rgba(248, 248, 248, .5); /* Make the container background semi-transparent. */
+	background: rgba(248, 248, 248, .5);
 	border-radius: 8px ;
 }
 
 
 footer { margin-top: 2em;}
-/*** PAGE SPECIFIC ***/
-/* Video Containers */
+
 
 .video-container {
   width: 100%;
@@ -164,7 +148,7 @@ display: inline-block;
 
 .ww-quiz .ww-btn span {
   font-size: 18px;
-  margin-right: 1em; 
+  margin-right: 1em;
 }
 
 .ww-quiz .ww-btn button {
